@@ -1,20 +1,12 @@
-import { Link } from 'react-router-dom'
-import products from '../data'
+import React from 'react'
+import { Outlet } from 'react-router-dom'
+import ProductsList from './ProductsList'
 
-const Products = () => {
+export const Products = () => {
   return (
-    <section className="section">
-      <h2>products</h2>
-      <div className="products">
-        {products.map((product) => (
-          <article key={product.id}>
-            <h5>{product.name}</h5>
-            <Link to={`${product.id}`}>More Info</Link>
-          </article>
-        ))}
-      </div>
+    <section>
+      <Outlet />
     </section>
   )
 }
-
 export default Products

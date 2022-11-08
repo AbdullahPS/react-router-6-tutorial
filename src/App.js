@@ -6,8 +6,9 @@ import Error from './pages/Error'
 import Login from './pages/Login'
 import SingleProduct from './pages/SingleProduct'
 import Home from './pages/Home'
-import Products from './pages/Products'
+import ProductsList from './pages/ProductsList'
 import SharedLayout from './pages/SharedLayout'
+import Products from './pages/Products'
 import { ProtectedRoute } from './pages/ProtectedRoute'
 
 function App() {
@@ -18,8 +19,10 @@ function App() {
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="products" element={<Products />} />
-          <Route path="products/:productId" element={<SingleProduct />} />
+          <Route path="products" element={<Products />}>
+            <Route index element={<ProductsList />} />
+            <Route path=":productId" element={<SingleProduct />} />
+          </Route>
           <Route path="login" element={<Login setUser={setUser} />} />
           <Route
             path="dashboard"
