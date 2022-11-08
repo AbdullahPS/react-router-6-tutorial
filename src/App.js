@@ -10,12 +10,14 @@ import Products from './pages/Products'
 function App() {
   return (
     <BrowserRouter>
+      <nav>our navbar</nav>
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="about" element={<About />}></Route>
         <Route path="products" element={<Products />}></Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>
+      <footer>our footer</footer>
     </BrowserRouter>
   )
 }
