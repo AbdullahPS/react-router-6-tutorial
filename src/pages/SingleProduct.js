@@ -1,9 +1,13 @@
+import { Link, useParams } from 'react-router-dom'
 const SingleProduct = () => {
-  return (
-    <section className='section product'>
-      <h2>single product</h2>
-    </section>
-  );
-};
+  const { productId } = useParams()
 
-export default SingleProduct;
+  return (
+    <section className="section product">
+      <h2>single product:{productId}</h2>
+      <Link to="/product">Back to products</Link>
+    </section>
+  )
+}
+
+export default SingleProduct
